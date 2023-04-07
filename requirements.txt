@@ -3,3 +3,4 @@ torch==2.0.0
 http://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp39-cp39-linux_x86_64.whl
 http://download.pytorch.org/whl/cpu/torchvision-0.15.1%2Bcpu-cp39-cp39-linux_x86_64.whl
 numpy==1.24.2
+gunicorn==20.1.0
