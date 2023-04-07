@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask_cors import CORS
 import torch
 import torch.nn as nn
 import torchvision
@@ -11,9 +12,14 @@ import numpy as np
 import segmentation_models_pytorch
 
 
-app = Flask(__name__)
+def create_app(config={}):
+    app = Flask(__name__)
+    CORS(app)
+    app.config['SEVER_NAME'] = '0.0.0.0'
+    app.app_context().push()
+    return app
 
-
+app = create_app()
 
 @app.route('/', methods=['POST'])
 def classify():
